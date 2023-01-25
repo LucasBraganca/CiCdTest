@@ -18,6 +18,6 @@ jobs:
         - name: cmake
           run: |
             mkdir -p build
-            cd buid && cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
+            cd build && cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
         - name: make test
           run: cd build && make CiCdTest_tst && test/CiCdTest_tst

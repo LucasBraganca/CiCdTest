@@ -14,10 +14,10 @@ jobs:
         - name: download googletest lib
           run: |
             mkdir lib
-            git clone https://github.com/google/googletest/ lib
+            cd lib && git clone https://github.com/google/googletest/
         - name: cmake
           run: |
-            mkdir -p build && cd build
-            cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
+            mkdir -p build
+            cd buid && cmake .. -DCMAKE_BUILD_TYPE=Debug -G "Unix Makefiles"
         - name: make test
           run: cd build && make CiCdTest_tst && test/CiCdTest_tst
